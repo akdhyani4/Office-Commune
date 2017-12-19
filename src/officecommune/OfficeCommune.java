@@ -14,7 +14,8 @@ public class OfficeCommune {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         EmpLog E = new EmpLog();
         E.setVisible(true);
     }

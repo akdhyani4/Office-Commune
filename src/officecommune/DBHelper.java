@@ -32,8 +32,8 @@ public class DBHelper {
     {
        try
        {
-           Statement stmt = conn.createStatement();
-           String sql = "SELECT name FROM sqlite_master WHERE type='table'";
+            Statement stmt = conn.createStatement();
+            String sql = "SELECT name FROM sqlite_master WHERE type='table'";
             ResultSet rs = stmt.executeQuery(sql);
             int count=0;
             while(rs.next())
