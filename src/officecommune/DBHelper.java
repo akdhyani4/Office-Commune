@@ -99,6 +99,29 @@ public class DBHelper {
             return false;
         }        
     }
+
+    public boolean checkRegisteredUser(String username) {
+        
+        try
+        {
+            PreparedStatement pst=conn.prepareStatement("select * from users where username = ?");
+            pst.setString(1, username);
+            ResultSet rs=pst.executeQuery();
+            if(rs.next())
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+            return false;
+        }
+    }
     /**
      * @param args the command line arguments
      */

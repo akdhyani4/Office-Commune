@@ -16,8 +16,8 @@ public class OfficeCommune {
      */
     public static void main(String[] args) 
     {
-        EmpLog E = new EmpLog();
-        E.setVisible(true);
+        FirstFrame obj=new FirstFrame();
+        obj.setVisible(true);
     }
     
 }
