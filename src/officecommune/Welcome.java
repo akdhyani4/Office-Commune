@@ -11,10 +11,16 @@ package officecommune;
  */
 public class Welcome extends javax.swing.JFrame {
 
+    private DBHelper db;
+
     /**
      * Creates new form Welcome
      */
-    String s=null;
+    
+    void start()
+    {
+        showname.setText("Welcome "+db.username);
+    }
     public Welcome() {
         initComponents();
         this.setVisible(true);
@@ -101,11 +107,8 @@ public class Welcome extends javax.swing.JFrame {
     private javax.swing.JLabel showname;
     // End of variables declaration//GEN-END:variables
 
-    void setSession(String text) {
-        s = text;
-    }
-
-    void start() {
-        showname.setText("Welcome "+s);
+    
+    void setDB(DBHelper db) {
+       this.db = db;
     }
 }

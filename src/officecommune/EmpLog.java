@@ -127,12 +127,24 @@ JOptionPane J = new JOptionPane();
     }//GEN-LAST:event_TpassActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-        boolean B;
-        B=DBConnect.checkDB();
+        DBHelper db = new DBHelper();
+        db.connect();
+        db.createTables();
+        boolean B = db.loginUser(Tname.getText(),Tpass.getText());
+        if(B)
+        {
+            db.username = Tname.getText();
+            Welcome W = new Welcome();
+            W.setDB(db);
+            W.start();
+        }
+        else
+        {
+            J.showMessageDialog(null,"No match found!");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    void getSession(int n)
+    void setSession()
     {
         
     }
